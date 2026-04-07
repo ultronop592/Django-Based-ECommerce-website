@@ -27,20 +27,20 @@ Core/
     admin.py
     tests.py
   templates/
-    parent.html
+    base.html
     index.html
     about.html
     contact.html
   static/
     css/
-      parent.css
+      base.css
     js/
     img/
 ```
 
 ## Current Features
 
-- Template inheritance using `parent.html`
+- Template inheritance using `base.html`
 - Shared Bootstrap-based navbar and footer
 - Basic route mapping in `myapp`
 - Static files directory configured via `STATICFILES_DIRS`
@@ -65,8 +65,8 @@ Configured in `Core/urls.py` and `myapp/urls.py`:
 ### Windows (PowerShell)
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+python -m venv venv
+.\venv\Scripts\Activate.ps1
 pip install django
 python manage.py migrate
 python manage.py runserver
@@ -90,7 +90,7 @@ python manage.py runserver
 - Add product/category/cart/order models in `myapp/models.py`
 - Add authentication (signup/login/logout)
 - Add dynamic navbar links to real routes
-- Connect static CSS (`static/css/parent.css`) in templates using `{% load static %}`
+- Connect static CSS (`static/css/base.css`) in templates using `{% load static %}`
 - Add unit tests in `myapp/tests.py`
 
 ## Useful Commands

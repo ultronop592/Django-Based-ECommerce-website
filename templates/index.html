@@ -1,10 +1,19 @@
-{% extends "parent.html" %}
+{% extends "base.html" %}
 
 {% block title %}Home{% endblock title %}
 
 {% block content %}
 
-Hello Bhaishab,
+<div class="container py-5 text-center">
+	<h1 class="mb-3">Welcome to the Store</h1>
+	<p class="mb-4">Use the buttons below to open your pages.</p>
+	<div class="d-flex justify-content-center gap-2 flex-wrap">
+		<a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+		<a href="{% url 'about' %}" class="btn btn-outline-primary">About</a>
+		<a href="{% url 'contact' %}" class="btn btn-outline-success">Contact</a>
+		<a href="{% url 'product' %}" class="btn btn-outline-dark">Product</a>
+	</div>
+</div>
 
 
 {% endblock content %}

@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock title %} | My Project</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
   </head>
   <body>
     
@@ -35,16 +37,16 @@
       <!-- Left links -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link d-flex flex-column text-center active" aria-current="page" href="#"><i class="fas fa-home fa-lg my-2"></i><span class="small">Home</span></a>
+          <a class="nav-link d-flex flex-column text-center active" aria-current="page" href="{% url 'home' %}"><i class="fas fa-home fa-lg my-2"></i><span class="small">Home</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-user-friends fa-lg my-2"></i><span class="small">My Network</span></a>
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'about' %}"><i class="fas fa-user-friends fa-lg my-2"></i><span class="small">About</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-briefcase fa-lg my-2"></i><span class="small">Jobs</span></a>
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'product' %}"><i class="fas fa-briefcase fa-lg my-2"></i><span class="small">Products</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-comment-dots fa-lg my-2"></i><span class="small">Messaging</span></a>
+          <a class="nav-link d-flex flex-column text-center" aria-current="page" href="{% url 'contact' %}"><i class="fas fa-comment-dots fa-lg my-2"></i><span class="small">Contact</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link d-flex flex-column text-center" aria-current="page" href="#"><i class="fas fa-bell fa-lg my-2"></i><span class="small">Notifications</span></a>

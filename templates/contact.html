@@ -1,10 +1,60 @@
-{% extends "parent.html" %}
+{% extends "base.html" %}
 
 {% block title %}Contact Us{% endblock title %}
 
 {% block content %}
 
-This is contact page. You can contact us on the following details:
+<div class="container py-4">
+    {% if success %}
+    <div class="alert alert-success" role="alert">
+        Your message has been submitted successfully.
+    </div>
+    {% endif %}
 
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" id="name" required>
+        </div>
 
+        <div class="mb-3">
+            <label for="email" class="form-label">Email ID</label>
+            <input type="email" name="email" class="form-control" id="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" name="phone" class="form-control" id="phone" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="msg" class="form-label">Message</label>
+            <textarea name="msg" class="form-control" id="msg" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for d in data %}
+    <tr>
+      <th scope="row">{{d.name}}</th>
+      <td>{{d.email}}</td>
+      <td>{{d.phone}}</td>
+      <td>{{d.msg}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock content %}
